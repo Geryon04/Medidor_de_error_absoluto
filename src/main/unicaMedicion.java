@@ -11,10 +11,8 @@ public class unicaMedicion extends valorPromedio implements IErrorAbsoluto{
 	public unicaMedicion(List<Double> medicion, double resolucion) {
 		this.medicion = medicion;
 		this.resolucion = resolucion;
-		promedio = calculoPromedio(medicion);
-		
-	}
-	
+		promedio = calculoPromedio(medicion);		
+	}	
 	
 	@Override
 	public double calculoDeError(double promedio) {
@@ -22,7 +20,7 @@ public class unicaMedicion extends valorPromedio implements IErrorAbsoluto{
 		return getResolucion();
 	}
 
-@Override
+	@Override
 	public String expresion() {
 		return "El resultado es " + getPromedio() + "+- " + calculoDeError(getPromedio());
 	}
@@ -30,19 +28,17 @@ public class unicaMedicion extends valorPromedio implements IErrorAbsoluto{
 
 	public double getPromedio() {
 	return promedio;
-}
+	}
 
 
 	public List<Double> getMedicion() {
 		return medicion;
 	}
-
-
+	
 
 	public void setMedicion(List<Double> medicion) {
 		this.medicion = medicion;
 	}
-
 
 
 	public double getResolucion() {
@@ -50,11 +46,9 @@ public class unicaMedicion extends valorPromedio implements IErrorAbsoluto{
 	}
 
 
-
 	public void setResolucion(double resolucion) {
 		this.resolucion = resolucion;
 	}
-
 
 	
 }
