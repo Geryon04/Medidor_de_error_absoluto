@@ -1,10 +1,20 @@
 package main;
 
+import java.util.List;
+
 public class medicionMenorADiez extends valorPromedio implements IErrorAbsoluto{
+	
+	private double promedio;
+	private List<Double> medicion;
+	
+	public medicionMenorADiez(List<Double> medicion) {
+		this.medicion = medicion;
+		promedio = calculoPromedio(medicion);
+	}
 
 	@Override
 	public double calculoDeError(double promedio) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 
