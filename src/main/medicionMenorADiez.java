@@ -35,8 +35,7 @@ public class medicionMenorADiez extends valorPromedio implements IErrorAbsoluto{
 
 	@Override
 	public String expresion() {
-		// TODO Auto-generated method stub
-		return null;
+		return "El resultado es " + getPromedio() + "+- " + calculoDeError(getPromedio());
 	}
 
 }
