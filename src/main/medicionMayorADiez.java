@@ -12,6 +12,7 @@ public class medicionMayorADiez extends valorPromedio implements IErrorAbsoluto 
 		promedio = calculoPromedio(medicion);
 	}
 
+	//funcion de calculo de incertidumbre o error absoluto
 	@Override
 	public double calculoDeError(double promedio) {
 		double longitud = medicion.size();
@@ -31,6 +32,7 @@ public class medicionMayorADiez extends valorPromedio implements IErrorAbsoluto 
 		return medicion;
 	}
 
+	//expresion del resultado de la medicion
 	@Override
 	public String expresion() {
 		return "El resultado es " + getPromedio() + "+- " + calculoDeError(getPromedio());

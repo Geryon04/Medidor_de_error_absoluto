@@ -4,6 +4,7 @@ import java.util.List;
 
 public class valorPromedio implements IPromedio {
 
+	//calcula el promedio de todos los valores dados como parametro
 	@Override
 	public double calculoPromedio(List<Double> mediciones) {
 		double suma = 0;
