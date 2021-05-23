@@ -14,8 +14,23 @@ public class medicionMenorADiez extends valorPromedio implements IErrorAbsoluto{
 
 	@Override
 	public double calculoDeError(double promedio) {
-		
-		return 0;
+		double maximo = 0;
+		double valor = 0;
+		for(double instancia : medicion) {
+			valor = promedio - instancia;
+			if(maximo < valor) {
+				maximo = valor;
+			}
+		}
+		return maximo;
+	}
+
+	public double getPromedio() {
+		return promedio;
+	}
+
+	public List<Double> getMedicion() {
+		return medicion;
 	}
 
 	@Override
