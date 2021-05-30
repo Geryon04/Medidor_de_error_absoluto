@@ -6,11 +6,12 @@ public class valorPromedio implements IPromedio {
 
 	//calcula el promedio de todos los valores dados como parametro
 	@Override
-	public double calculoPromedio(List<Double> mediciones) {
-		double suma = 0;
-		double resultado = suma / mediciones.size();
-		for(double valor : mediciones) {
-			suma += valor;
+	public float calculoPromedio(List<Float> mediciones) {
+		float suma = 0;
+		float longitud = mediciones.size();
+		float resultado = suma / longitud;
+		for(float valor : mediciones) {
+			suma = suma + valor;
 		}
 		return resultado;
 	}

@@ -2,7 +2,7 @@ package main;
 
 public interface IErrorAbsoluto {
 	
-	double calculoDeError(double promedio);
+	float calculoDeError(float promedio);
 	
 	String expresion();
 

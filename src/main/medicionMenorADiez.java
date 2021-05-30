@@ -4,19 +4,19 @@ import java.util.List;
 
 public class medicionMenorADiez extends valorPromedio implements IErrorAbsoluto{
 	
-	private double promedio;
-	private List<Double> medicion;
+	private float promedio;
+	private List<Float> medicion;
 	
-	public medicionMenorADiez(List<Double> medicion) {
+	public medicionMenorADiez(List<Float> medicion, float promedio) {
 		this.medicion = medicion;
-		promedio = calculoPromedio(medicion);
+		this.promedio = promedio;
 	}
 
 	@Override
-	public double calculoDeError(double promedio) {
-		double maximo = 0;
-		double valor = 0;
-		for(double instancia : medicion) {
+	public float calculoDeError(float promedio) {
+		float maximo = 0;
+		float valor = 0;
+		for(float instancia : medicion) {
 			valor = promedio - instancia;
 			if(maximo < valor) {
 				maximo = valor;
@@ -25,17 +25,10 @@ public class medicionMenorADiez extends valorPromedio implements IErrorAbsoluto{
 		return maximo;
 	}
 
-	public double getPromedio() {
-		return promedio;
-	}
-
-	public List<Double> getMedicion() {
-		return medicion;
-	}
 
 	@Override
 	public String expresion() {
-		return "El resultado es " + getPromedio() + "+- " + calculoDeError(getPromedio());
+		return "El resultado es " + this.promedio + "+- " + this.calculoDeError(this.promedio);
 	}
 
 }

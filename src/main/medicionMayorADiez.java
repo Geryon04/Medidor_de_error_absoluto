@@ -4,38 +4,30 @@ import java.util.List;
 
 public class medicionMayorADiez extends valorPromedio implements IErrorAbsoluto {
 	
-	private double promedio;
-	private List<Double> medicion;
+	private float promedio;
+	private List<Float> medicion;
 	
-	public medicionMayorADiez(List<Double> medicion) {
+	public medicionMayorADiez(List<Float> medicion , float promedio) {
 		this.medicion = medicion;
-		promedio = calculoPromedio(medicion);
+		this.promedio = promedio;
 	}
 
 	//funcion de calculo de incertidumbre o error absoluto
 	@Override
-	public double calculoDeError(double promedio) {
-		double longitud = medicion.size();
-		double valor = 0;
-		double resultado = Math.pow(valor / longitud, 2);
-		for(double instancia : medicion) {
+	public float calculoDeError(float promedio) {
+		float longitud = medicion.size();
+		float valor = 0;
+		float resultado = (float) Math.pow(valor / longitud, 2);
+		for(float instancia : medicion) {
 			valor += Math.pow(promedio - instancia, 2);
 		}
 		return resultado;
 	}
 
-	public double getPromedio() {
-		return promedio;
-	}
-
-	public List<Double> getMedicion() {
-		return medicion;
-	}
-
 	//expresion del resultado de la medicion
 	@Override
 	public String expresion() {
-		return "El resultado es " + getPromedio() + "+- " + calculoDeError(getPromedio());
+		return "El resultado es " + this.promedio + "+- " + calculoDeError(this.promedio);
 	}
 
 }
