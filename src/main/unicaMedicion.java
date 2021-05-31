@@ -18,7 +18,17 @@ public class unicaMedicion implements IErrorAbsoluto{
 
 	@Override
 	public String expresion() {
-		return "El resultado es " + this.promedio + "+- " + this.calculoDeError(resolucion);
+		return "El resultado es " + this.getPromedio() + "+- " + this.calculoDeError(resolucion);
+	}
+
+
+	@Override
+	public String toString() {
+		return "unicaMedicion [resolucion=" + resolucion + ", promedio=" + promedio + "]";
+	}
+
+	public float getPromedio() {
+		return promedio;
 	}
 
 	

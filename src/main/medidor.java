@@ -13,9 +13,8 @@ public class medidor {
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Ingrese las instancias o oprima 0 para terminar");
 		List<Float> listado = new ArrayList<Float>();
-		valorPromedio valorP = new valorPromedio();
-		float promedioTotal = valorP.calculoPromedio(listado);
-		Float instancia = entrada.nextFloat();
+		
+		float instancia = entrada.nextFloat();
 		
 		
 		while(instancia != 0) {			
@@ -24,14 +23,16 @@ public class medidor {
 			instancia = entrada.nextFloat();
 		}
 		
-		
+		valorPromedio valorP = new valorPromedio(listado);
+		float promedioTotal = valorP.calculoPromedio();
 		
 		if(listado.size() == 1) {		 
 			 System.out.println("ingrese la resolucion de la herramienta");
 			 Float resolucion = entrada.nextFloat();
 			 unicaMedicion unico = new unicaMedicion(promedioTotal , resolucion);
 			 unico.calculoDeError(promedioTotal);
-			 System.out.println(unico.expresion());
+			 System.out.println(promedioTotal);
+			 System.out.println(unico.toString());
 		}
 		else if(listado.size() < 10 && listado.size() > 1) {
 			medicionMenorADiez menorADiez = new medicionMenorADiez(listado, promedioTotal);

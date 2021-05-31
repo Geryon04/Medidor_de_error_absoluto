@@ -2,7 +2,7 @@ package main;
 
 import java.util.List;
 
-public class medicionMenorADiez extends valorPromedio implements IErrorAbsoluto{
+public class medicionMenorADiez  implements IErrorAbsoluto{
 	
 	private float promedio;
 	private List<Float> medicion;

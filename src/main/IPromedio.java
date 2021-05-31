@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IPromedio {
 	
-	float calculoPromedio(List<Float> mediciones) ;
+	float calculoPromedio() ;
 
 
 }
